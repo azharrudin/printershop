@@ -16,3 +16,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+Route::get('/login', [\App\Http\Controllers\Printer::class, "login"]);
+Route::get('/catalog', [\App\Http\Controllers\Printer::class, "catalog"]);
+
+Route::prefix('/items')->group(function () {
+    Route::get('/fetch', [\App\Http\Controllers\Printer::class, "fetch"]);
+});
