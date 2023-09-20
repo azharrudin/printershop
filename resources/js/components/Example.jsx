@@ -12,7 +12,9 @@ import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
-
+function harga(x){
+    return x.split("000").join(".")
+}
 function ProductCard() {
     const [data, setData] = useState([]);
     useEffect(() => {
@@ -41,7 +43,7 @@ function ProductCard() {
                   </Typography>
                 </CardContent>
                 <CardActions>
-                  <Button size="small" variant='body2'>{item["harga"].split("000").join(".")}</Button>
+                  <Button size="small" variant='body2'>{harga(item["harga"])}</Button>
                   <Button size="small">Tambah ke keranjang</Button>
                 </CardActions>
               </Card>
