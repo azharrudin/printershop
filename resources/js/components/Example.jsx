@@ -13,7 +13,7 @@ import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
 function harga(x){
-    return x.split("000").join(".")
+    return x
 }
 function ProductCard() {
     const [data, setData] = useState([]);
