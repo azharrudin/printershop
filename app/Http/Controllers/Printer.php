@@ -42,4 +42,13 @@ class Printer extends Controller
         return view("catalog");
     }
 
+    public function regist()
+    {
+        // Retrieve records from the database using the model
+       
+        
+        // Return a view with the data
+        return view("customer.regist");
+    }
+
 }

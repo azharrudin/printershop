@@ -13,31 +13,30 @@
         }
     </style>
 </head>
-
 <body>
     <form action="/" method="get">
         <div class="">
-            <section class="mulai_login vh-100" >
+            <section class="mulai_regist vh-100" >
                 <div class="container py-5 h-100">
                     <div class="row d-flex justify-content-center align-items-center h-100">
                         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                             <div class="card shadow-2-strong">
                                 <div class="card_form card-body text-center">
-                                    <h3 class="mb-0">Sign in</h3>
+                                    <h3 class="mb-0">Regist</h3>
                                     <h5 class="mb-3">Printershop customer account</h5>
-                                    <div class="login">
+                                    <div class="regist">
                                         <div class="form-outline mb-4">
-                                            <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Email" required/>
+                                            <input type="username" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Your Username" required/>
                                         </div>
-        
                                         <div class="form-outline mb-4">
-                                            <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Password" required />
+                                            <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Email" required/> 
                                         </div>
-        
-                                        <button class="btn_login btn-primary btn-lg btn-block w-100" type="submit">Sign in</button> <br>
-                                    
+                                        <div class="form-outline mb-4">
+                                            <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Password" required/>
+                                        </div>
+                                        <button class="btn btn-primary btn-lg btn-block w-100" type="submit">Regist</button> <br>
                                         <div class="btn_link blockquote-footer">
-                                            <a href="regist"> Buat akun</a>
+                                            <a href="login"> Kembali ke halaman login</a>
                                         </div>
                                     </div>
                                 </div>
