@@ -10,7 +10,7 @@
             background-size: cover; /* Scale the image to cover the entire body */
             background-repeat: no-repeat; /* Prevent image repetition */
             background-attachment: fixed; /* Fix the image in place */
-        }
+        } 
     </style>
 </head>
 <body>

@@ -19,7 +19,15 @@ Route::get('/', function () {
 Route::get('/login', [\App\Http\Controllers\Printer::class, "login"]);
 Route::get('/catalog', [\App\Http\Controllers\Printer::class, "catalog"]);
 Route::get('/regist', [\App\Http\Controllers\Printer::class, "regist"]);
-Route::get('/home', [\App\Http\Controllers\Printer::class, "home"]);
+
+Route::get('/admin', function(){
+    return view('admin.home');
+});
+
+Route::get('/kontrol', function(){
+    return view('admin.kontrol_barang');
+});
+
 
 Route::prefix('/items')->group(function () {
 Route::get('/fetch', [\App\Http\Controllers\Printer::class, "fetch"]);

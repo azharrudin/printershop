@@ -51,4 +51,22 @@ class Printer extends Controller
         return view("customer.regist");
     }
 
+    public function home()
+    {
+        // Retrieve records from the database using the model
+       
+        
+        // Return a view with the data
+        return view("admin.home");
+    }
+
+    public function kontrol_barang()
+    {
+        // Retrieve records from the database using the model
+       
+        
+        // Return a view with the data
+        return view("admin.kontrol_barang");
+    }
+
 }

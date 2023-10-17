@@ -34,7 +34,8 @@
                                             <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Password" required />
                                         </div>
         
-                                        <button class="btn_login btn-primary btn-lg btn-block w-100" type="submit">Sign in</button> <br>
+                                        <button class="btn_login btn-primary btn-lg btn-block w-100" type="submit">Sign in
+                                            <a href="home"> </button> <br>
                                     
                                         <div class="btn_link blockquote-footer">
                                             <a href="regist"> Buat akun</a>
