@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <style>
         body {
-            background-image: url('img/background.jpg'); /* Specify the path to your background image */
+            background-image: url('/img/background.jpg'); /* Specify the path to your background image */
             background-size: cover; /* Scale the image to cover the entire body */
             background-repeat: no-repeat; /* Prevent image repetition */
             background-attachment: fixed; /* Fix the image in place */
@@ -22,8 +22,8 @@
                         <div class="col-12 col-md-8 col-lg-6 col-xl-5">
                             <div class="card shadow-2-strong">
                                 <div class="card_form card-body text-center">
-                                    <h3 class="mb-0">Regist</h3>
-                                    <h5 class="mb-3">Printershop customer account</h5>
+                                    <h3 class="mb-0">Register</h3>
+                                    <h5 class="mb-3 text-muted">Printershop customer account</h5>
                                     <div class="regist">
                                         <div class="form-outline mb-4">
                                             <input type="username" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Your Username" required/>

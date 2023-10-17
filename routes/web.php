@@ -17,11 +17,14 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/login', [\App\Http\Controllers\Printer::class, "login"]);
-Route::get('/catalog', [\App\Http\Controllers\Printer::class, "catalog"]);
-Route::get('/regist', [\App\Http\Controllers\Printer::class, "regist"]);
-Route::get('/home', [\App\Http\Controllers\Printer::class, "home"]);
+Route::get('/home', [\App\Http\Controllers\Printer::class, "catalog"]);
 
 Route::prefix('/items')->group(function () {
-Route::get('/fetch', [\App\Http\Controllers\Printer::class, "fetch"]);
+    Route::get('/fetch', [\App\Http\Controllers\Printer::class, "fetch"]);
 });
 
+Route::prefix('/customer')->group(function () {
+    Route::get('/login', [\App\Http\Controllers\Printer::class, "regist"]);
+    Route::get('/register', [\App\Http\Controllers\Printer::class, "regist"]);
+
+});
