@@ -12,11 +12,28 @@ import Collapse from '@mui/material/Collapse';
 import Avatar from '@mui/material/Avatar';
 import Typography from '@mui/material/Typography';
 import { red } from '@mui/material/colors';
+import NavigationBar from './Navbar';
 function harga(x){
     return x
 }
+var keranjang = {}    
+
 function ProductCard() {
     const [data, setData] = useState([]);
+const [items, setItems] = useState({});
+
+    function tambahKeranjang(product){
+      if(keranjang[product["namaprinter"]] == undefined){
+       keranjang[product["namaprinter"]] = [product]
+       total++
+      }
+      else if(keranjang[product["namaprinter"]] != undefined){
+       keranjang[product["namaprinter"]].push(product)
+total++
+      }
+      setItems(keranjang);
+    }
+  
     useEffect(() => {
         axios.get('/items/fetch')
         .then((response) => {
@@ -27,7 +44,7 @@ function ProductCard() {
         <div className="container">
             <div className="row justify-content-center">
             {data.map((item) => (
-                <Card sx={{ maxWidth: 345 }}>
+                <Card sx={{ maxWidth: 345 }} className='m-2'>
                 <CardMedia
                   sx={{ height: 140 }}
                   image="/static/images/cards/contemplative-reptile.jpg"
@@ -44,7 +61,7 @@ function ProductCard() {
                 </CardContent>
                 <CardActions>
                   <Button size="small" variant='body2'>{harga(item["harga"])}</Button>
-                  <Button size="small">Tambah ke keranjang</Button>
+                  <Button size="small" onClick={() => tambahKeranjang(item)}>Tambah ke Keranjang</Button>
                 </CardActions>
               </Card>
               ))}
@@ -54,6 +71,17 @@ function ProductCard() {
 }
 
 export default ProductCard;
+
+
+if (document.getElementById('navbar')) {
+  const Index = ReactDOM.createRoot(document.getElementById("navbar"));
+
+  Index.render(
+      <React.StrictMode>
+          <NavigationBar/>
+      </React.StrictMode>
+  )
+}
 
 if (document.getElementById('example')) {
     const Index = ReactDOM.createRoot(document.getElementById("example"));

@@ -30,6 +30,11 @@ Route::get('/kontrol', function(){
 
 
 Route::prefix('/items')->group(function () {
-Route::get('/fetch', [\App\Http\Controllers\Printer::class, "fetch"]);
+    Route::get('/fetch', [\App\Http\Controllers\Printer::class, "fetch"]);
 });
 
+Route::prefix('/customer')->group(function () {
+    Route::get('/login', [\App\Http\Controllers\Printer::class, "regist"]);
+    Route::get('/register', [\App\Http\Controllers\Printer::class, "regist"]);
+
+});
