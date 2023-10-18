@@ -14,7 +14,7 @@ function NavigationBar(data){
       <Navbar.Collapse id="basic-navbar-nav" className='d-flex justify-content-end'>
         <Nav className="mr-auto">
           <Nav.Link href="#">Products</Nav.Link>
-          <Nav.Link href="#">Cart ({data})</Nav.Link>
+          <Nav.Link href="#">Cart ({data.total})</Nav.Link>
       
         </Nav>
       </Navbar.Collapse>
