@@ -48,15 +48,15 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      * 
      */
-    public function api_add_item()
+    public function api_add_item(Request $request)
     {
         // Retrieve records from the database using the model
         $imagePath = $request->file('foto')->store('uploads', 'public');
         $x = DB::table("tb_printer")->insert([
-            'namaprinter' => $req,
-            'harga' => 500,
+            'namaprinter' => $request->namaprinter,
+            'harga' => intval($request->harga),
             'spesifikasi' => 'Printer specifications',
-            'foto' => $imagePath->getClientOriginalName(),
+            'foto' => $request->file('foto')->getClientOriginalName(),
         ]);
     }
 }
