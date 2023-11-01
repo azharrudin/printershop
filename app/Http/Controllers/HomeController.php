@@ -53,10 +53,10 @@ class HomeController extends Controller
         // Retrieve records from the database using the model
         $imagePath = $request->file('foto')->store('uploads', 'public');
         $x = DB::table("tb_printer")->insert([
-            'namaprinter' => 'Printer Name',
+            'namaprinter' => $req,
             'harga' => 500,
             'spesifikasi' => 'Printer specifications',
-            'foto' => getClientOriginalName();,
+            'foto' => $imagePath->getClientOriginalName(),
         ]);
     }
 }
