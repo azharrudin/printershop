@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Carbon\Factory;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -48,15 +49,20 @@ class HomeController extends Controller
      * @return \Illuminate\Contracts\Support\Renderable
      * 
      */
-    public function api_add_item(Request $request)
+    public function add(Request $request)
     {
         // Retrieve records from the database using the model
         $imagePath = $request->file('foto')->store('uploads', 'public');
         $x = DB::table("tb_printer")->insert([
+            'idprinter' => rand(10,100),
             'namaprinter' => $request->namaprinter,
-            'harga' => intval($request->harga),
             'spesifikasi' => 'Printer specifications',
+            'stok' => $request->stok,
+            'harga' => intval($request->harga),
             'foto' => $request->file('foto')->getClientOriginalName(),
         ]);
+        return 'yeyi berhasil';
     }
+
+
 }

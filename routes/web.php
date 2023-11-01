@@ -37,4 +37,6 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/admin/edit', [App\Http\Controllers\HomeController::class, 'edit_item'])->name('admin_edit');
 Route::get('/admin/add', [App\Http\Controllers\HomeController::class, 'add_item'])->name('admin_add');
+Route::post('/admin/add/api', [App\Http\Controllers\HomeController::class, 'add'])->name('add');
+
 
