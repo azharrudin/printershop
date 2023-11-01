@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 
 use Illuminate\Http\Request;
-
+use Yajra\DataTables\DataTables;
 class Printer extends Controller
 {
      /**
@@ -15,10 +15,13 @@ class Printer extends Controller
     public function fetch()
     {
         // Retrieve records from the database using the model
-        $results = DB::select('SELECT * FROM tb_printer');
+        $x = DB::table("tb_printer")->select("*")->get();
         
+        return DataTables::of($x)->addColumn("action", function(){
+            return "<input class='btn btn-small btn-danger' value='hapus' style='width: 80px;'>&nbsp;<input class='btn btn-small btn-warning' value='edit' style='width: 80px;'>";
+        })->make(true);
+
         // Return a view with the data
-        return response($results);
     }
      /**
      * Display a listing of the resource.

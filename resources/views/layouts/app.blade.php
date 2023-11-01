@@ -41,6 +41,16 @@
       <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
       <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
       <![endif]-->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+
+    <script src="{{asset('style/js/popper.min.js')}}"></script>
+    <script src="{{asset('style/js/bootstrap.min.js')}}"></script>
+    <!-- wow animation -->
+    <script src="{{asset('style/js/animate.js')}}"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.6/css/jquery.dataTables.css" />
+    <script src="https://cdn.datatables.net/1.13.6/js/jquery.dataTables.js"></script>
+
+
 </head>
 
 <body>
@@ -61,17 +71,16 @@
                         <h4>Admin Page</h4>
                         <ul class="list-unstyled components">
                             <li>
-                                <a href="kontrol_barang">
-                                    <i class="fa fa-truck red_color"></i> <span>Tambah Barang</span></a>
+                                <a href="/home" class="{{ (Route::is('home')) ? 'text-white':'text-muted'; }}">
+                                    <i class="fa fa-truck red_color"></i> <span>Data Barang</span>
+                                </a>
                             </li>
                             <li>
-                                <a href="kontrol_barang">
-                                    <i class="fa fa-truck red_color"></i> <span>Edit Barang</span></a>
+                                <a href="/admin/add" class="{{ (Request::is('admin/add')) ? 'text-white':'text-muted'; }}">
+                                    <i class="fa fa-truck red_color"></i> <span>Tambah Barang</span>
+                                </a>
                             </li>
-                            <li>
-                                <a href="contact.html">
-                                    <i class="fa fa-folder-open yellow_color"></i> <span>Daftar Barang</span></a>
-                            </li>
+                        </ul>
                     </div>
                 </nav>
                 <!-- end sidebar -->
@@ -112,11 +121,13 @@
                                     </div>
                                 </div>
                             </div>
-                            <div id="main">
-                                @yield('content')
-                            </div>
-                        </div>
 
+                        </div>
+                        @endauth
+                        <div id="main">
+                            @yield('content')
+                        </div>
+                        @auth
                     </div>
                 </div>
             </div>
@@ -175,11 +186,7 @@
             @endauth
 
 
-            <script src="{{asset('style/js/jquery.min.js')}}"></script>
-            <script src="{{asset('style/js/popper.min.js')}}"></script>
-            <script src="{{asset('style/js/bootstrap.min.js')}}"></script>
-            <!-- wow animation -->
-            <script src="{{asset('style/js/animate.js')}}"></script>
+
             <!-- select country -->
             <script src="{{asset('style/js/bootstrap-select.js')}}"></script>
             <!-- owl carousel -->

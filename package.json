@@ -19,6 +19,9 @@
         "@emotion/react": "^11.11.1",
         "@emotion/styled": "^11.11.0",
         "@mui/material": "^5.14.10",
-        "react-bootstrap": "^2.9.0"
+        "react-bootstrap": "^2.9.0",
+        "react-helmet": "^6.1.0",
+        "sweetalert2": "^11.9.0",
+        "sweetalert2-react-content": "^5.0.7"
     }
 }
