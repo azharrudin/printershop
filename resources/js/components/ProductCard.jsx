@@ -58,7 +58,7 @@ function ProductCard() {
                         <Card sx={{ maxWidth: 345 }} className="m-2">
                             <CardMedia
                                 sx={{ height: 140 }}
-                                image="/static/images/cards/contemplative-reptile.jpg"
+                                image={"/images/"+item['foto']}
                                 title="green iguana"
                             />
                             <CardContent>

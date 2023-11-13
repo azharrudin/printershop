@@ -1,11 +1,13 @@
 @extends('layouts.app')
 
 @section('content')
+
 <body style=" background-image: url('/img/background.jpg'); /* Specify the path to your background image */
             background-size: cover; /* Scale the image to cover the entire body */
             background-repeat: no-repeat; /* Prevent image repetition */
             background-attachment: fixed; /* Fix the image in place */">
-    <form action="/" method="get">
+    <form method="post" action="{{ route('register') }}">
+        @csrf
         <div class="">
             <section class="mulai_regist vh-100">
                 <div class="container py-5 h-100">
@@ -17,13 +19,29 @@
                                     <h5 class="mb-3 text-muted">Printershop customer account</h5>
                                     <div class="regist">
                                         <div class="form-outline mb-4">
-                                            <input type="username" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Your Username" required />
+                                            <input type="username" id="typePasswordX-2" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required placeholder="Your Username" required />
+                                            @error('name')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <input type="email" id="typeEmailX-2" class="form-control form-control-lg" placeholder="Email" required />
+                                            <input type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}"  placeholder="Email" required />
+                                            @error('email')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                         </div>
                                         <div class="form-outline mb-4">
-                                            <input type="password" id="typePasswordX-2" class="form-control form-control-lg" placeholder="Password" required />
+                                            <input type="password" class="form-control @error('password') is-invalid @enderror" name="password" placeholder="Password" required />
+                                            <input type="password" class=" mt-4 form-control @error('password') is-invalid @enderror" name="password_confirmation" placeholder="Password confirmation" required />
+                                            @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                            @enderror
                                         </div>
                                         <button class="btn btn-primary btn-lg btn-block w-100" type="submit">Regist</button> <br>
                                         <div class="btn_link blockquote-footer">
